@@ -1,74 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A01039785</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-  <title>9785</title>
 </head>
 <body>
-
-<nav class="navbar fixed-top navbar-light bg-light">
-   <a class="navbar-brand" href="#formulario">Resume</a>
-   <a class="navbar-brand" href="https://experiencia21.tec.mx/">Canvas</a>
-</nav>
-
-<div class="container" style="padding-top: 70px;">
-	<h1>Ingrid Hernandez</h1>
-</div>
-<div class="container-fluid"> 
-	<div class="row"> 
-		<div class="col" style="background-color: #fed8b1"> Menu </div>
-	</div>
-</div>
-
-<div class="container"> 
-	<div class="row"> 
-		<div class="col-sm" style="background-color: #d3d3d3"> <h1> Columna 1 </h1> <p> Texto 1 </p>
-		</div>
-		<div class="col-sm" style="background-color: #dbdbdb"> <h1> Columna 2 </h1> <p> Texto 2 </p>
-		</div>
-		<div class="col-sm" style="background-color: #d3d3d3"> <h1> Columna 3 </h1> <p> Texto 3 </p>
-		</div>
-	</div>
-</div>
-
-<div class="card text-center" id=Ancla>
-    <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" href="#Footer">Tab1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Ancla" tabindex="-1" aria-disabled="true">Disabled</a>
+    
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Ingrid Hernandez</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
         </li>
       </ul>
     </div>
+  </nav>
+
+
+<div class="container" style="margin-left: 40%; margin-top: 50px;">
+  <div id="exercise">
+    <p>Two way binding - {{ name }} {{ age }}</p>
+    <p>Nombre</p>
+    <div>
+      <input type="text" v-bind:value="name">
+  </div>
+  </div>
+  <div class="row"><h1>Actividad 3 Vuejs</h1></div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;" id="cambiarfoto">
+            <img :src="myImage" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Tarjeta para mostrar mis hobbies</h5>
+              <p class="card-text">Estas fotos representan mis pasatiempos.</p>
+              <a class="btn btn-primary" @click="myImage = otherImage">Cambiar foto</a>
+            </div>
+          </div>
+    </div>
+    </div>
 </div>
-
-<form>
-  <div class="form-group" id="formulario">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+<div id="hide">
+  <button class="btn btn-primary" v-on:click="isHidden = !isHidden">Esconde y muestra</button>
+  <p v-if="!isHidden">Texto que se esconde y aparece</p>
+</div>
+<div class="container" style="margin-bottom: 30px;">
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;" id="exercise2">
+                <img src="https://raw.githubusercontent.com/ingridhdezbenz/act1Web/branch1/IMG_4229.JPG" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Valor actual: {{ value }}</h5>
+                  <p class="card-text">Suma los con los botones hasta llegar a mi edad.</p>
+                  <button class="btn btn-primary" @click="value += 5">Suma 5</button>
+                  <button class="btn btn-primary" @click="value += 1">Suma 1</button>
+                  <p>{{ result }}</p>
+                </div>
+            </div>
+        </div>
+   </div>
+</div> 
+<div class="container" style="margin-left: 40%; margin-top: 50px;">
+  <div class="row">
+    <form class="multi-range-field my-5 pb-5">
+        <label for="customRange1">Slider</label>
+        <input id="multi3" class="multi-range" type="range" />
+      </form>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check button</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
+</div>
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+  new Vue({
+    el: '#cambiarfoto',
+    data() {
+      return { 
+        myImage: "https://image-cdn.essentiallysports.com/wp-content/uploads/20200316205830/Tennis-4.jpg",
+        otherImage: "https://miro.medium.com/max/10944/1*S81O15rjKfG-BFdnNC6-GQ.jpeg",
+        myImage2: "https://picale.mx/wp-content/uploads/couple-hiking-mountain-climbing-1296x728-header.jpg"
+      }
+    }
+  });
+</script>
+<script>
+  var app = new Vue({
+    el: '#hide',
+    data: {
+      isHidden: false
+    }
+  })
+</script>
+<script>
+  new Vue({
+    el: '#exercise',
+    data: {
+        name: 'Ingrid Hernandez',
+        age: 21
+    }
+});
+</script>
+<script>
+    new Vue({
+        el: '#exercise2',
+        data: {
+            value: 0,
+            seconds: 5
+        },
+        computed: {
+            result () {
+                return this.value < 21 ? 'Aun no llegas a mi edad' : 'Llegaste!';
+            }
+        },
+        watch: {
+            result () {
+                setTimeout(() => this.value = 0, this.seconds * 1000);
+            }
+        }
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
- <!-- Si utilizamos componentes de Bootstrap que requieran Javascript agregar estos tres archivos -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>
-
